@@ -93,6 +93,15 @@ class Flatpickr extends DateTimePicker
 
     protected FlatpickrMonthSelectorType | Closure $monthSelectorType = FlatpickrMonthSelectorType::DROPDOWN_SELECTOR;
 
+    public function getDefaultStateCasts(): array
+    {
+        if ($this->isMultiplePicker()) {
+            return $stateCasts= [];
+        }
+
+        return parent::getDefaultStateCasts();
+    }
+
     protected function parseToCarbon($state): ?CarbonInterface
     {
         $component = $this;
