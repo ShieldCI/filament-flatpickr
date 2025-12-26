@@ -96,7 +96,7 @@ class Flatpickr extends DateTimePicker
     public function getDefaultStateCasts(): array
     {
         if ($this->isMultiplePicker()) {
-            return $stateCasts= [];
+            return $stateCasts = [];
         }
 
         return parent::getDefaultStateCasts();
